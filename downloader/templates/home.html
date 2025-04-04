@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Downloader</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .video-info {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+        .thumbnail {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #ff0000;
+            outline: none;
+        }
+        button, .btn {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            display: inline-block;
+            text-align: center;
+            text-decoration: none;
+        }
+        button:hover, .btn:hover {
+            background-color: #cc0000;
+        }
+        .error {
+            color: #d32f2f;
+            padding: 12px;
+            background-color: #ffebee;
+            border-radius: 6px;
+            margin: 15px 0;
+            border-left: 4px solid #d32f2f;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .meta-item {
+            background-color: white;
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .quality-selector {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        select {
+            padding: 10px;
+            border-radius: 4px;
+            border: 2px solid #ddd;
+            width: 100%;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .description {
+            white-space: pre-line;
+            line-height: 1.7;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: #ff0000; text-align: center;">YouTube Video Downloader</h1>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="url" placeholder="Paste YouTube link here (e.g., https://youtu.be/...)">
+            <button type="submit">Get Video Info</button>
+        </form>
+
+        {% if error %}
+            <div class="error">
+                <strong>Error:</strong> {{ error }}
+            </div>
+        {% endif %}
+
+        {% if success %}
+        <div class="video-info">
+            <h2>{{ title }}</h2>
+            
+            {% if thumbnail %}
+                <img src="{{ thumbnail }}" alt="{{ title }}" class="thumbnail">
+            {% endif %}
+            
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <strong>Author</strong>
+                    <p>{{ author }}</p>
+                </div>
+                <div class="meta-item">
+                    <strong>Duration</strong>
+                    <p>{{ duration }}</p>
+                </div>
+                <div class="meta-item">
+                    <strong>Views</strong>
+                    <p>{{ views }}</p>
+                </div>
+                <div class="meta-item">
+                    <strong>Video ID</strong>
+                    <p>{{ video_id }}</p>
+                </div>
+            </div>
+
+            {% if description %}
+            <div class="description">
+                <strong>Description:</strong>
+                <p>{{ description }}</p>
+            </div>
+            {% endif %}
+
+            <div class="quality-selector">
+                <form method="POST" action="{% url 'download' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="url" value="{{ clean_url }}">
+                    
+                    <h3>Select Download Quality:</h3>
+                    <select name="quality">
+                        <option value="highest">Highest Quality (Recommended)</option>
+                        {% for stream in streams %}
+                            <option value="{{ stream.resolution }}">{{ stream.resolution }} ({{ stream.filesize|filesizeformat }})</option>
+                        {% endfor %}
+                        <option value="lowest">Lowest Quality (Smallest File)</option>
+                    </select>
+                    
+                    <button type="submit">
+                        <i class="fas fa-download"></i> Download Video
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Font Awesome for icons (optional) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

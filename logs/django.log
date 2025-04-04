@@ -1,0 +1,75 @@
+INFO 2025-04-04 13:01:25,237 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:01:31,390 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\YOUTUBE_DOWNLOADER\settings.py changed, reloading.
+INFO 2025-04-04 13:01:33,228 autoreload Watching for file changes with StatReloader
+ERROR 2025-04-04 13:01:39,291 exception Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "C:\xampp\htdocs\YOUTUBE_DOWNLOADER\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\YOUTUBE_DOWNLOADER\venv\Lib\site-packages\django\utils\deprecation.py", line 128, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\YOUTUBE_DOWNLOADER\venv\Lib\site-packages\django\middleware\common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\xampp\htdocs\YOUTUBE_DOWNLOADER\venv\Lib\site-packages\django\http\request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2025-04-04 13:01:39,775 log Bad Request: /
+INFO 2025-04-04 13:03:17,338 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\YOUTUBE_DOWNLOADER\settings.py changed, reloading.
+INFO 2025-04-04 13:03:20,555 autoreload Watching for file changes with StatReloader
+DEBUG 2025-04-04 13:04:16,084 helpers matched regex search: (?:v=|\/)([0-9A-Za-z_-]{11}).*
+WARNING 2025-04-04 13:04:16,925 views Attempt 1 failed: HTTP Error 403: Forbidden
+DEBUG 2025-04-04 13:04:17,931 helpers matched regex search: (?:v=|\/)([0-9A-Za-z_-]{11}).*
+WARNING 2025-04-04 13:04:18,289 views Attempt 2 failed: HTTP Error 403: Forbidden
+DEBUG 2025-04-04 13:04:20,292 helpers matched regex search: (?:v=|\/)([0-9A-Za-z_-]{11}).*
+WARNING 2025-04-04 13:04:20,658 views Attempt 3 failed: HTTP Error 403: Forbidden
+INFO 2025-04-04 13:07:25,419 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\downloader\views.py changed, reloading.
+INFO 2025-04-04 13:07:27,719 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:09:39,693 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 13:10:06,712 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:10:07,718 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:10:09,720 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+INFO 2025-04-04 13:15:52,048 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 13:16:25,001 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:16:26,004 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:16:28,006 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+INFO 2025-04-04 13:16:43,026 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\downloader\views.py changed, reloading.
+INFO 2025-04-04 13:16:45,104 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:39:11,974 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 13:39:47,103 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:39:48,117 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:39:50,119 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:40:33,555 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:40:34,558 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:40:36,560 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+INFO 2025-04-04 13:43:29,913 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:46:32,732 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\downloader\views.py changed, reloading.
+INFO 2025-04-04 13:46:34,432 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:46:40,168 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\downloader\views.py changed, reloading.
+INFO 2025-04-04 13:46:41,822 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:46:50,596 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\downloader\views.py changed, reloading.
+INFO 2025-04-04 13:46:52,360 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:46:57,030 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\downloader\views.py changed, reloading.
+INFO 2025-04-04 13:46:58,795 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:50:22,625 autoreload C:\xampp\htdocs\YOUTUBE_DOWNLOADER\downloader\views.py changed, reloading.
+INFO 2025-04-04 13:50:24,453 autoreload Watching for file changes with StatReloader
+INFO 2025-04-04 13:50:34,883 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 13:50:58,010 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:50:59,013 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:01,015 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:06,147 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:07,150 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:09,152 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:12,324 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:13,326 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:15,328 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:37,451 log Not Found: /favicon.ico
+WARNING 2025-04-04 13:51:47,749 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:48,751 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 13:51:50,757 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+INFO 2025-04-04 21:29:19,832 autoreload Watching for file changes with StatReloader
+WARNING 2025-04-04 21:29:27,895 log Not Found: /favicon.ico
+WARNING 2025-04-04 21:29:34,095 views Attempt 1 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 21:29:35,097 views Attempt 2 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
+WARNING 2025-04-04 21:29:37,098 views Attempt 3 failed: YouTube.__init__() got an unexpected keyword argument 'headers'
